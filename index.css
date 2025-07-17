@@ -1,0 +1,10 @@
+body,
+html {
+    margin: 0;
+}
+
+body {
+    height: 100vh;
+    background: no-repeat center center fixed;
+    background-size: cover;
+}
