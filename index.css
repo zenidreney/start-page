@@ -7,6 +7,7 @@
 body,
 html {
     margin: 0;
+    font-family: "Inter", sans-serif;
 }
 
 a {
@@ -67,10 +68,13 @@ button:focus {
 
 .grid-item-2 > time {
     color: wheat;
+    font-size: 1.8rem;
+    font-family: "Bitcount Grid Single", system-ui;
 }
 
 .grid-item-3 {
     border: 1px solid blue;
+    font-family: "Ancizar Sans", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -93,6 +97,7 @@ button:focus {
 
 .grid-item-3 button {
     color: red;
+    font-family: inherit;
     min-width: 80px;
     background-color: #fff;
     height: 100%;
@@ -113,7 +118,9 @@ button:focus {
 
 .grid-item-5 > #photo-info {
     align-self: flex-end;
+    font-family: "Ancizar Sans", sans-serif;
     font-size: 0.85rem;
+    margin: 0.2em;
 }
 
 .grid-item-5 > #photo-info > p {
