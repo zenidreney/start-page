@@ -11,21 +11,49 @@
     <body>
         <!--<img src="https://picsum.photos/200/300">-->
 
-        <div class="main-grid-box" id="main-grid-box">
-            <div class="tr-grid-item">TOP RIGHT</div>
-            <div class="tl-grid-item">TOP LEFT</div>
-            <div class="mc-grid-item">
+        <main class="main-grid-box" id="main-grid-box">
+            <!--GRID 1-->
+
+            <div class="grid-item-1">
+                SOME CONTENT
+            </div>
+
+            <!--GRID 2-->
+
+            <div class="grid-item-2">
+                <time id="current-time"></time>
+            </div>
+
+            <!--GRID 3-->
+
+            <div class="grid-item-3">
                 <!-- DuckDuckGo Search Form -->
                 <form action="https://duckduckgo.com/" method="get" target="_blank">
-                    <input type="text" name="q" class="searchbar-input" placeholder="Search (DuckDuckGo...)" />
-                    <div class="btn_container">
-                        <button type="submit" class="form-btn">Search</button>
+                    <input type="text" name="q" placeholder="Search (DuckDuckGo...)" />
+                    <div>
+                        <button type="submit">Search</button>
                     </div>
                 </form>
             </div>
-            <div class="br-grid-item">BOTTOM RIGHT</div>
-            <div class="bl-grid-item">BOTTOM LEFT</div>
-        </div>
+
+            <!--GRID 4-->
+
+            <div class="grid-item-4">
+            SOME CONTENT
+            </div>
+
+            <!--GRID 5-->
+
+            <div class="grid-item-5">
+                
+                
+                <div id="photo-info">
+                    <p>Photo by:</p>
+                    <!--Link from index.js-->
+                </div>
+                
+            </div>
+        </main>
 
         <script src="index.js"></script>
     </body>
