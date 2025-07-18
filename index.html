@@ -9,7 +9,21 @@
     <body>
         <!--<img src="https://picsum.photos/200/300">-->
 
-        <div class="main-grid-box" id="main-grid-box"></div>
+        <div class="main-grid-box" id="main-grid-box">
+            <div class="tr-grid-item">TOP RIGHT</div>
+            <div class="tl-grid-item">TOP LEFT</div>
+            <div class="mc-grid-item">
+                <!-- DuckDuckGo Search Form -->
+                <form action="https://duckduckgo.com/" method="get" target="_blank">
+                    <input type="text" name="q" class="searchbar-input" placeholder="Search (DuckDuckGo...)" />
+                    <div class="btn_container">
+                        <button type="submit" class="form-btn">Search</button>
+                    </div>
+                </form>
+            </div>
+            <div class="br-grid-item">BOTTOM RIGHT</div>
+            <div class="bl-grid-item">BOTTOM LEFT</div>
+        </div>
 
         <script src="index.js"></script>
     </body>
