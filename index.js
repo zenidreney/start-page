@@ -49,7 +49,19 @@ getLocBtn.addEventListener("click", function (e) {
         })
         .then((data) => {
             console.log(typeof data, data.results[0].latitude, data.results[0].longitude);
+            const lat = data.results[0].latitude;
+            const lon = data.results[0].longitude;
+            return fetch(
+                "https://api.open-meteo.com/v1/forecast?" +
+                    `latitude=${lat}&longitude=${lon}` +
+                    `&daily=temperature_2m_mean` +
+                    `&daily=temperature_2m_min` +
+                    `&daily=temperature_2m_max` +
+                    `&forecast_days=1`
+            );
         })
+        .then((res) => res.json())
+        .then((meteo) => console.log(meteo, meteo.daily.temperature_2m_max[0]))
         .catch((err) => console.error(err));
 });
 
