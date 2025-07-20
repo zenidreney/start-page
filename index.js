@@ -1,7 +1,7 @@
 /*Test URL for 400 - 500 "https://jsonplaceholder.typicode.com/invalid-endpoint"*/
 const mainGridBox = document.getElementById("main-grid-box");
-let city, region, country;
-let inputLocation = "Cadiz";
+
+
 
 
 
@@ -13,6 +13,7 @@ getLocBtn.addEventListener("click", function (e) {
     
     inputLocation = document.getElementById("input-location").value.toLowerCase().trim();
     displayMeteo(inputLocation);
+    localStorage.setItem("savedLocation", inputLocation);
 });
 
 /*BACKGROUND FOT THE BODY*/
@@ -44,6 +45,10 @@ fetch("https://picsum.photos/v2/list?page=2&limit=100")
 
 
 /*METEO FOR GRID 1*/
+
+let city, region, country;
+let savedLocation = localStorage.getItem("savedLocation");
+let inputLocation = savedLocation ? savedLocation : "Madrid";
 
 function displayMeteo(loc) {
     fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${loc}&count=5&language=en&format=json`)
@@ -79,7 +84,7 @@ function displayMeteo(loc) {
             const minTemp = document.getElementById("min-temp");
             const maxTemp = document.getElementById("max-temp");
 
-            cityName.textContent = city + "," + region + "," + country;
+            cityName.textContent = city + ", " + region + ", " + country;
             meanTemp.textContent = meteo.daily.temperature_2m_mean[0];
             minTemp.textContent = meteo.daily.temperature_2m_min[0];
             maxTemp.textContent = meteo.daily.temperature_2m_max[0];

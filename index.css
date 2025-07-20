@@ -12,6 +12,12 @@ html {
 
 a {
     color: white;
+    font-size: 0.75rem;
+}
+
+a:hover,
+a:focus {
+    color: blue;
 }
 
 p,
@@ -65,12 +71,6 @@ button:focus {
     justify-items: center;
     align-items: center;
     padding: 1em 0;
-}
-
-.grid-item-1 > div {
-    align-self: normal;
-    padding-left: 2em;
-    
 }
 
 .grid-item-2 {
@@ -141,7 +141,16 @@ button:focus {
     font-weight: 600;
 }
 
-/*TABLET*/
+/*SHARED LAYOUT*/
+
+@media (min-width: 449px) {
+    .grid-item-1 > div {
+        align-self: normal;
+        padding-left: 2em;
+    }
+}
+
+/*TABLET GRID AND LAYOUT*/
 
 @media (min-width: 449px) and (max-width: 920px) {
     .main-grid-box {
@@ -150,13 +159,14 @@ button:focus {
 
     .grid-item-1 {
         /*background-color: red;*/
-
         grid-column: 1 / span 1;
     }
 
     .grid-item-2 {
         /*background-color: violet;*/
         grid-column: 2 / span 1;
+        justify-content: flex-end;
+        padding-right: 2em;
     }
 
     .grid-item-2 > time {
@@ -196,7 +206,8 @@ button:focus {
     }
 }
 
-/*DESKTOP*/
+/*DESKTOP FRID AND LAYOUT*/
+
 @media (min-width: 921px) {
     .main-grid-box {
         grid-template: 1.5fr 1.8fr 2.2fr / 1fr 1.5fr 1fr;
@@ -215,7 +226,7 @@ button:focus {
     }
 
     .grid-item-2 > time {
-        font-size: 3rem;
+        font-size: 2.6rem;
     }
 
     .grid-item-3 {
