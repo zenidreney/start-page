@@ -7,7 +7,7 @@
 body,
 html {
     margin: 0;
-    font-family: "Inter", sans-serif;
+    font-family: "Ancizar Sans", sans-serif;
 }
 
 a {
@@ -23,8 +23,13 @@ a:focus {
 p,
 h1,
 h2,
-h3 {
+h3,
+h4{
     color: wheat;
+}
+
+h3 {
+    margin: 0;
 }
 
 a,
@@ -60,21 +65,22 @@ button:focus {
     height: 100%;
     width: 100%;
     display: grid;
-    grid-template: repeat(5, 1fr) / 1fr;
+    grid-template: 1fr 0.3fr 1fr 2fr 0.3fr / 1fr;
     z-index: 2;
 }
 
 .grid-item-1 {
-    border: 1px solid violet;
+    font-family: "Ancizar Sans", sans-serif;
+    /*border: 1px solid violet;*/
     display: flex;
     flex-direction: column;
     justify-items: center;
     align-items: center;
-    padding: 1em 0;
+    padding: 1em;
 }
 
 .grid-item-2 {
-    border: 1px solid violet;
+    /*border: 1px solid violet;*/
     display: flex;
     justify-content: center;
     align-items: center;
@@ -87,7 +93,7 @@ button:focus {
 }
 
 .grid-item-3 {
-    border: 1px solid blue;
+    /*border: 1px solid blue;*/
     font-family: "Ancizar Sans", sans-serif;
     display: flex;
     justify-content: center;
@@ -98,6 +104,7 @@ button:focus {
     display: flex;
     align-items: stretch;
     width: 90%;
+    margin-top: -90px;
 }
 
 .grid-item-3 input {
@@ -122,11 +129,20 @@ button:focus {
 }
 
 .grid-item-4 {
-    border: 1px solid green;
+    /*border: 1px solid green;*/
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 3em;
+}
+
+.grid-item-4 > div {
+    max-width: 440px;
 }
 
 .grid-item-5 {
-    border: 1px solid yellow;
+    /*border: 1px solid yellow;*/
     display: flex;
 }
 
@@ -141,9 +157,17 @@ button:focus {
     font-weight: 600;
 }
 
+/*UTILITITES*/
+
+.background {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 1em 2em;
+    border-radius: 8px;
+}
+
 /*SHARED LAYOUT*/
 
-@media (min-width: 449px) {
+@media (min-width: 819px) {
     .grid-item-1 > div {
         align-self: normal;
         padding-left: 2em;
@@ -152,7 +176,7 @@ button:focus {
 
 /*TABLET GRID AND LAYOUT*/
 
-@media (min-width: 449px) and (max-width: 920px) {
+@media (min-width: 820px) and (max-width: 1023px) {
     .main-grid-box {
         grid-template: 1.5fr 1.8fr 2.2fr / repeat(2, 1fr);
     }
@@ -179,12 +203,12 @@ button:focus {
     }
 
     .grid-item-3 input {
-        line-height: 50px;
-        font-size: 1.5rem;
+        line-height: 30px;
+        font-size: 1rem;
     }
 
     .grid-item-3 button {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 
     .grid-item-4 {
@@ -202,15 +226,15 @@ button:focus {
     }
 
     .grid-item-5 > #photo-info {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
     }
 }
 
 /*DESKTOP FRID AND LAYOUT*/
 
-@media (min-width: 921px) {
+@media (min-width: 1024px) {
     .main-grid-box {
-        grid-template: 1.5fr 1.8fr 2.2fr / 1fr 1.5fr 1fr;
+        grid-template: 1.5fr 1.8fr 2.8fr / 1fr 1.5fr 1fr;
     }
 
     .grid-item-1 {
@@ -221,7 +245,7 @@ button:focus {
 
     .grid-item-2 {
         /*background-color: violet;*/
-        border: 1px solid violet;
+        /*border: 1px solid violet;*/
         grid-column: 3 / span 1;
     }
 
@@ -240,6 +264,7 @@ button:focus {
 
         grid-column: 3 / span 1;
         grid-row: 3;
+        
     }
 
     .grid-item-5 {

@@ -26,22 +26,18 @@
             <!--GRID 1-->
 
             <div class="grid-item-1">
-            
-            <form>
-                <input type="search" id="input-location" name="location" placeholder="Enter city.">
-                <button id="get-loc-btn">Get Weather</button>
-            </form>
-            
-           <div>
-                 <h3><span id="city-name"></span></h3>
-                <p>Av. <span id="mean-temp"></span>°C</p>
-                <p>Min. <span id="min-temp"></span>°C</p>
-                <p>Max. <span id="max-temp"></span>°C</p>
-                <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
+                <form>
+                    <input type="search" id="input-location" name="location" placeholder="Enter city." />
+                    <button id="get-loc-btn">Get Weather</button>
+                </form>
 
-            </div>
-            
-            
+                <div class="background">
+                    <h3><span id="city-name"></span></h3>
+                    <p>Av. <span id="mean-temp"></span>°C</p>
+                    <p>Min. <span id="min-temp"></span>°C</p>
+                    <p>Max. <span id="max-temp"></span>°C</p>
+                    <a href="https://open-meteo.com/">Weather data by Open-Meteo.com</a>
+                </div>
             </div>
 
             <!--GRID 2-->
@@ -65,9 +61,11 @@
             <!--GRID 4-->
 
             <div class="grid-item-4">
-                
-                
-                <p>Inspirational quotes provided by</p> <a href="https://zenquotes.io/" target="_blank">ZenQuotes API</a>
+                <div class="background">
+                    <h3>Meditation of the Day</h3>
+                    <h4 id="quote-author"></h4>
+                    <p id="quote"></p>
+                </div>
             </div>
 
             <!--GRID 5-->

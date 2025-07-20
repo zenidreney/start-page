@@ -1,16 +1,12 @@
 /*Test URL for 400 - 500 "https://jsonplaceholder.typicode.com/invalid-endpoint"*/
 const mainGridBox = document.getElementById("main-grid-box");
 
-
-
-
-
 /*Event Listeners*/
 
 const getLocBtn = document.getElementById("get-loc-btn");
 getLocBtn.addEventListener("click", function (e) {
     e.preventDefault();
-    
+
     inputLocation = document.getElementById("input-location").value.toLowerCase().trim();
     displayMeteo(inputLocation);
     localStorage.setItem("savedLocation", inputLocation);
@@ -43,7 +39,6 @@ fetch("https://picsum.photos/v2/list?page=2&limit=100")
         console.log(err);
     });
 
-
 /*METEO FOR GRID 1*/
 
 let city, region, country;
@@ -60,7 +55,7 @@ function displayMeteo(loc) {
             return res.json();
         })
         .then((data) => {
-            console.log(data, data.results[0].admin1, data.results[0].country_code);
+            //console.log(data, data.results[0].admin1, data.results[0].country_code);
             const lat = data.results[0].latitude;
             const lon = data.results[0].longitude;
             city = data.results[0].name;
@@ -103,3 +98,33 @@ function currentTime() {
 }
 
 setInterval(currentTime, 1000);
+
+/*QUOTES FOR GRID 5*/
+
+async function quotes(url){
+    
+    try {
+        const res = await fetch(url);
+        console.log(res.ok);
+        if(!res.ok) {
+            throw new Error(`Error code ${res.status}!`);
+        }
+        const data = await res.json();
+        console.log(data);
+        
+        const quoteAuthor = document.getElementById("quote-author");
+        const quote = document.getElementById("quote");
+        
+        quoteAuthor.textContent = data.author;
+        quote.textContent = data.quote;
+        
+        
+    } catch (err) {
+        console.log(err);
+    }
+    
+}
+
+quotes("https://dummyjson.com/quotes/random");
+
+
