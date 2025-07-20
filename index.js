@@ -38,8 +38,10 @@ getLocBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
     const inputLocation = document.getElementById("input-location").value.toLowerCase().trim();
+    let city, region, country;
+    
     console.log(inputLocation);
-    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${inputLocation}&count=1&language=en&format=json`)
+    fetch(`https://geocoding-api.open-meteo.com/v1/search?name=${inputLocation}&count=5&language=en&format=json`)
         .then((res) => {
             //console.log(res);
             if (!res.ok) {
@@ -48,9 +50,12 @@ getLocBtn.addEventListener("click", function (e) {
             return res.json();
         })
         .then((data) => {
-            console.log(typeof data, data.results[0].latitude, data.results[0].longitude);
+            console.log(data, data.results[0].admin1, data.results[0].country_code);
             const lat = data.results[0].latitude;
             const lon = data.results[0].longitude;
+            city = data.results[0].name;
+        region = data.results[0].admin1;
+            country = data.results[0].country_code;
             return fetch(
                 "https://api.open-meteo.com/v1/forecast?" +
                     `latitude=${lat}&longitude=${lon}` +
@@ -61,7 +66,19 @@ getLocBtn.addEventListener("click", function (e) {
             );
         })
         .then((res) => res.json())
-        .then((meteo) => console.log(meteo, meteo.daily.temperature_2m_max[0]))
+        .then((meteo) => {
+            //console.log(meteo, meteo.daily.temperature_2m_max[0]);
+
+            const cityName = document.getElementById("city-name");
+            const meanTemp = document.getElementById("mean-temp");
+            const minTemp = document.getElementById("min-temp");
+            const maxTemp = document.getElementById("max-temp");
+
+        cityName.textContent = city + "," + region + "," + country;
+        meanTemp.textContent = meteo.daily.temperature_2m_mean[0];
+        minTemp.textContent = meteo.daily.temperature_2m_min[0];
+        maxTemp.textContent = meteo.daily.temperature_2m_max[0];
+        })
         .catch((err) => console.error(err));
 });
 
