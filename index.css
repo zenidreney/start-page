@@ -149,7 +149,7 @@ button:focus {
     display: flex;
     align-items: stretch;
     width: 90%;
-    margin-top: -90px;
+    /*margin-top: -90px;*/
 }
 
 .grid-item-3 input {
