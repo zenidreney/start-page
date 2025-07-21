@@ -12,6 +12,16 @@ getLocBtn.addEventListener("click", function (e) {
     localStorage.setItem("savedLocation", inputLocation);
 });
 
+const changeLocBtn = document.getElementById("change-loc-btn");
+changeLocBtn.addEventListener("click", function () {
+    
+    const locationForm = document.getElementById("location-form");
+    console.log("clicked");
+    locationForm.classList.toggle("visible");
+    
+    
+});
+
 /*BACKGROUND FOT THE BODY*/
 fetch("https://picsum.photos/v2/list?page=2&limit=100")
     .then((res) => {
@@ -101,30 +111,27 @@ setInterval(currentTime, 1000);
 
 /*QUOTES FOR GRID 5*/
 
-async function quotes(url){
-    
+async function quotes(url) {
     try {
         const res = await fetch(url);
         console.log(res.ok);
-        if(!res.ok) {
+        if (!res.ok) {
             throw new Error(`Error code ${res.status}!`);
         }
         const data = await res.json();
         console.log(data);
-        
+
         const quoteAuthor = document.getElementById("quote-author");
         const quote = document.getElementById("quote");
-        
+
         quoteAuthor.textContent = data.author;
         quote.textContent = data.quote;
-        
-        
     } catch (err) {
         console.log(err);
     }
-    
 }
 
 quotes("https://dummyjson.com/quotes/random");
+
 
 
