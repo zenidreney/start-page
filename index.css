@@ -215,6 +215,10 @@ button:focus {
     justify-content: space-between;
 }
 
+.hidden {
+    display: none;
+}
+
 /*SHARED LAYOUT*/
 
 @media (min-width: 819px) {

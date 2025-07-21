@@ -1,23 +1,27 @@
 /*Test URL for 400 - 500 "https://jsonplaceholder.typicode.com/invalid-endpoint"*/
 const mainGridBox = document.getElementById("main-grid-box");
+const changeLocBtn = document.getElementById("change-loc-btn");
+const getLocBtn = document.getElementById("get-loc-btn");
+    const locationForm = document.getElementById("location-form");
 
 /*Event Listeners*/
 
-const getLocBtn = document.getElementById("get-loc-btn");
 getLocBtn.addEventListener("click", function (e) {
     e.preventDefault();
 
     inputLocation = document.getElementById("input-location").value.toLowerCase().trim();
     displayMeteo(inputLocation);
     localStorage.setItem("savedLocation", inputLocation);
+    changeLocBtn.classList.remove("hidden");
+    locationForm.classList.remove("visible");
 });
 
-const changeLocBtn = document.getElementById("change-loc-btn");
 changeLocBtn.addEventListener("click", function () {
     
-    const locationForm = document.getElementById("location-form");
     console.log("clicked");
-    locationForm.classList.toggle("visible");
+    locationForm.classList.add("visible");
+    changeLocBtn.classList.add("hidden");
+    
     
     
 });
