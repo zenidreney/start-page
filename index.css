@@ -8,6 +8,7 @@ body,
 html {
     margin: 0;
     font-family: "Ancizar Sans", sans-serif;
+     color: wheat;
 }
 
 a {
@@ -18,15 +19,6 @@ a {
 a:hover,
 a:focus {
     color: blue;
-}
-
-i,
-p,
-h1,
-h2,
-h3,
-h4 {
-    color: wheat;
 }
 
 h3 {
@@ -205,6 +197,7 @@ button:focus {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 1em 2em;
     border-radius: 8px;
+    margin: 0.9em 0;
 }
 
 .visible {
