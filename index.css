@@ -103,6 +103,11 @@ button:focus {
     display: none;
 }
 
+.location-form > input {
+    width: 60%;
+    padding-left: 0.5em;
+}
+
 .location-form > button,
 .grid-item-1 > div > button {
     background-color: inherit;
