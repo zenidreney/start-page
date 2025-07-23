@@ -90,7 +90,7 @@ button:focus {
     flex-direction: column;
     /*justify-content: center;*/
     /*align-items: center;*/
-    margin-bottom: 0.3em;
+    margin-bottom: 0.25em;
 }
 
 .grid-item-1 > div > p {
@@ -215,7 +215,7 @@ button:focus {
     background-color: rgba(0, 0, 0, 0.6);
     padding: 1em 2em;
     border-radius: 8px;
-    margin: 0.9em 0;
+    
 }
 
 .visible {
