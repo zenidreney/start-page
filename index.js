@@ -2,7 +2,7 @@
 const mainGridBox = document.getElementById("main-grid-box");
 const changeLocBtn = document.getElementById("change-loc-btn");
 const getLocBtn = document.getElementById("get-loc-btn");
-    const locationForm = document.getElementById("location-form");
+const locationForm = document.getElementById("location-form");
 
 /*Event Listeners*/
 
@@ -17,13 +17,9 @@ getLocBtn.addEventListener("click", function (e) {
 });
 
 changeLocBtn.addEventListener("click", function () {
-    
     console.log("clicked");
     locationForm.classList.add("visible");
     changeLocBtn.classList.add("hidden");
-    
-    
-    
 });
 
 /*BACKGROUND FOT THE BODY*/
@@ -129,13 +125,10 @@ async function quotes(url) {
         const quote = document.getElementById("quote");
 
         quoteAuthor.textContent = data.author;
-        quote.textContent = data.quote;
+        quote.textContent = data.quote.charAt(0).toUpperCase() + data.quote.slice(1).toLowerCase();
     } catch (err) {
         console.log(err);
     }
 }
 
 quotes("https://dummyjson.com/quotes/random");
-
-
-
